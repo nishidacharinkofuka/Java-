@@ -75,8 +75,8 @@ public class Qes1_13 {
 		long printInt = ( int1 + int2 + int3 + int4); 	
 		System.out.println (printInt);
 		
-		//１０×２
-		System.out.println(int1 * 2); 					
+		//10+10
+		System.out.println(int1 + int1); 					
 		
 		//文字列の連結
 		String printStr = (str1 + str2 + data);				
@@ -188,10 +188,12 @@ public class Qes1_13 {
 		 * 
 		 ------------------------------------------------------*/
 		
+		//Q9で掛けられたン分を戻す
+		age /= 2;
 		//trueを格納
-		boolean isResult = true;
+		
 		//変数に条件を代入
-		isResult = age >= 25;
+		boolean isResult = age >= 25;
 		//表示
 		System.out.println(isResult);
 		
@@ -223,23 +225,16 @@ public class Qes1_13 {
 		
 		/*------------------------------------------------------
 		 * 
-		 * Q12：Q11で使用した年齢が
+		 * Q13：Q12で使用した年齢が
 		 * 25歳以上もしくは身長が160以上ならtrueが出力
 		 * 
 		 ------------------------------------------------------*/
 		
-		//trueを格納
-		boolean isResult2 = true;
+		
 		//変数に条件を代入
-		isResult2 = a2 >= 25 || h2>160;
+		boolean isResult2 = a2 >= 25 || h2>160;
 		//表示
 		System.out.println(isResult2);
-		
-		
-		
-		
-		char c = '\u0078';
-		System.out.println(c);
 		
 	}
 
