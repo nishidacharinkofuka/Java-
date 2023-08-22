@@ -91,7 +91,7 @@ public class Qes1_13 {
 		System.out.println (printInt3);
 		
 		//割り算
-		int printInt4 = (int1 - 100);
+		int printInt4 = (int1 - int2);
 		System.out.println (printInt4);
 		
 		
@@ -188,7 +188,7 @@ public class Qes1_13 {
 		 * 
 		 ------------------------------------------------------*/
 		
-		//Q9で掛けられたン分を戻す
+		//Q9で掛けられた値を戻す
 		age /= 2;
 		//trueを格納
 		
