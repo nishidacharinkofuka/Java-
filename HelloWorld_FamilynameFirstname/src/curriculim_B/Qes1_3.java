@@ -148,6 +148,7 @@ public class Qes1_3 {
 							break; //終了
 
 						}
+						scan.close();
 					}
 				}
 			}

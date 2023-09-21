@@ -100,6 +100,9 @@ public class Qes7 {
 				//生徒の平均点
 				double averageEach = 0;
 				
+				//全体の平均点
+		        double averageAll = 0;
+				
 				//averageScore配列から生徒の点数を取り出して足す
 		        for( sutudent=0; sutudent < studentsInt; sutudent++) {
 		        	
@@ -109,6 +112,7 @@ public class Qes7 {
 		                
 		            }
 		            
+		            averageAll += averageEach;
 		            //合計を教科数で割る
 		            averageEach = averageEach/subjects.length;
 		            
@@ -129,12 +133,13 @@ public class Qes7 {
 		        //各教科の平均点
 		        double averageSubject = 0;
 		        
+		        
 		        //averageScore配列から各教科の点数を取り出して足す
 		        for( kyoka=0; kyoka < subjects.length; kyoka++) {
 		        	
-		            for( sutudent=1; sutudent < studentsInt; sutudent++) {
+		            for( sutudent=0; sutudent < studentsInt; sutudent++) {
 		            	
-		            	averageSubject += averageScore[sutudent-1][kyoka];
+		            	averageSubject += averageScore[sutudent][kyoka];
 		            	
 		            }
 		            
@@ -148,9 +153,15 @@ public class Qes7 {
 		            		        
 		        }
 		        
+		        averageAll = (averageAll/studentsInt)/subjects.length;
+		        System.out.println("全体の平均点は"+String.format("%.2f", averageAll)+"点です。");
+		        
 		        //終わり
 		        break;
+			}
+			
+			scan.close();
 		}
-		}}
+	}
 
 }

@@ -26,6 +26,8 @@ public class Qes6 {
 			System.out.println();
 			Random random = new Random(); //＜＜③　在庫を0～11内でランダムで作成
 			int stock = random.nextInt(12);
+			
+			
 
 			switch (value) { //＜＜④　②で取り出した要素を仕分ける
 
@@ -47,25 +49,22 @@ public class Qes6 {
 
 			case "ディスプレイ":
 
-				String result = value.equals(display) ? display + "の残り台数は" + (11 - stock) + "です。"
-						: value + "の残り台数は" + stock + "です。"; //＜＜Ａで作成した文字列を元に比較し出力を分ける
+				String result = value.equals(display) ? display + "の残り台数は" + ( 11 - stock) + "です。"
+						: value + "の残り台数は" + (stock) + "です。"; //＜＜Ａで作成した文字列を元に比較し出力を分ける
 
 				System.out.println(result);
 				break;
-
-			case "その他商品":
-
-				System.out.println("『その他商品』は指定の商品ではありません");
-
-				break;
-
+				
 			default:
 
-				System.out.println("『受け取った値』は指定の商品ではありません\n");
+				System.out.println("『"+value+"』は指定の商品ではありません\n");
 
 				break;
 
 			}
+			
+			scan.close();
+			
 		}
 	}
 }
