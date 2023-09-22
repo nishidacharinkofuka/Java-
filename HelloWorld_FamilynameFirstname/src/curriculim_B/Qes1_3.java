@@ -39,12 +39,13 @@ public class Qes1_3 {
 		 * 
 		 ----------------------*/
 
-		System.out.println(); //見やすさの為に改行
-		System.out.println("ＳＴＡＲＴ！");
+		System.out.println("\nＳＴＡＲＴ！");
 
+		String userName = "";
+		
 		while (true) {
-
-			String userName = scan.nextLine();
+			
+			userName = scan.nextLine();
 
 			if (userName.isEmpty()) {
 
@@ -66,92 +67,99 @@ public class Qes1_3 {
 				//正常入力
 				System.out.println("ユーザー名「 " + userName + " 」を登録しました。");
 				
-
+			break;
+			}
+		}
 			/*------------------------
 			 * 
 			* ３：じゃんけんチェック
 			* 
 			-------------------------*/
 
-				System.out.println(); //見やすさの為に改行
+		System.out.println("\nじゃんけんを入力してください。");
+		
+		String userHandsCheck = "";
+
+		//ユーザー名が正常なら実行
+		while (true) {
+			
+			userHandsCheck = scan.nextLine();
+
+			if (userHandsCheck.isEmpty()) {
+
+				//条件　0またはnull
 				System.out.println("じゃんけんを入力してください。");
+				continue;
 
-				//ユーザー名が正常なら実行
-				while (true) {
+			} else if (!userHandsCheck.matches(jankenJudge)) {
 
-					String userHandsCheck = scan.nextLine();
+				//条件　数字判定
+				System.out.println("数字のみで名前を入力してください。");
+				continue;
 
-					if (userHandsCheck.isEmpty()) {
-
-						//条件　0またはnull
-						System.out.println("じゃんけんを入力してください。");
-						continue;
-
-					} else if (!userHandsCheck.matches(jankenJudge)) {
-
-						//条件　数字判定
-						System.out.println("数字のみで名前を入力してください。");
-						continue;
-
-					}
-
-					//数字判定がクリアできたら整数に変換
-					int userHands = Integer.parseInt(userHandsCheck);
-
-					//0-2の数字指定
-					if (userHands < 0 || userHands >= 3) {
-
-						System.out.println("0-2の数字を入力してください。");
-						continue;
-
-					} else {
-
-						//じゃんけん配列から取り出して表示
-						System.out.println(userName + "の手は" + hands[userHands]);
-						System.out.println("相手の手は" + hands[pcHands]);
-
-					/*---------
-					 * 
-					* ４：勝敗
-					* 
-					----------*/
-
-						if (userHands == 1 && pcHands == 0) {
-
-							System.out.println("俺の勝ち！\r\n負けは次につながるチャンスです！\r\nネバーギブアップ！");
-							count = count + 1; //回数カウント
-
-						} else if (userHands == 2 && pcHands == 1) {
-
-							System.out.println("俺の勝ち！\r\nたかがじゃんけん、そう思ってないですか？\r\nそれやったら、次も俺が勝ちますよ");
-							count = count + 1;
-
-						} else if (userHands == 0 && pcHands == 2) {
-
-							System.out.println("俺の勝ち！\r\nなんで負けたか、明日まで考えといてください。\r\nそしたら何かが見えてくるはずです");
-							count = count + 1;
-
-						} else if (userHands == pcHands) {
-
-							System.out.println("DRAW あいこ　もう一回しましょう");
-							count = count + 1;
-
-						} else {
-
-							count = count + 1;
-							System.out.println("やるやん。\r\n次は俺にリベンジさせて");
-							System.out.println("勝つまでにかかった合計回数は" + count + "回です");
-
-							//countをリセット
-							count = 0;
-
-							break; //終了
-
-						}
-						scan.close();
-					}
-				}
 			}
+
+			//数字判定がクリアできたら整数に変換
+			int userHands = Integer.parseInt(userHandsCheck);
+
+			//0-2の数字指定
+			if (userHands < 0 || userHands >= 3) {
+
+			System.out.println("0-2の数字を入力してください。");
+			continue;
+
+			} else {
+
+				//じゃんけん配列から取り出して表示
+				System.out.println(userName + "の手は" + hands[userHands]);
+				System.out.println("相手の手は" + hands[pcHands]);		
+
+			/*---------
+			 * 
+			* ４：勝敗
+			* 
+			----------*/
+
+			if (userHands == 1 && pcHands == 0) {
+
+				System.out.println("俺の勝ち！\r\n負けは次につながるチャンスです！\r\nネバーギブアップ！");
+				count = count + 1; //回数カウント
+				continue;
+
+			} else if (userHands == 2 && pcHands == 1) {
+
+				System.out.println("俺の勝ち！\r\nたかがじゃんけん、そう思ってないですか？\r\nそれやったら、次も俺が勝ちますよ");
+				count = count + 1;
+				continue;
+				
+			} else if (userHands == 0 && pcHands == 2) {
+
+				System.out.println("俺の勝ち！\r\nなんで負けたか、明日まで考えといてください。\r\nそしたら何かが見えてくるはずです");
+				count = count + 1;
+				continue;
+
+			} else if (userHands == pcHands) {
+
+				System.out.println("DRAW あいこ　もう一回しましょう");
+				count = count + 1;
+				continue;
+
+			} else {
+
+				count = count + 1;
+				System.out.println("やるやん。\r\n次は俺にリベンジさせて");
+				System.out.println("勝つまでにかかった合計回数は" + count + "回です");
+
+				//countをリセット
+				count = 0;
+
+				break; //終了
+
+			}			
+					
+		}
+					
+		}scan.close();
 		}
 	}
-}
+

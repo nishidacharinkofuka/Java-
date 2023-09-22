@@ -17,10 +17,13 @@ public class Qes6 {
 
 		// 半角スペースで区切られた文字列を配列valuesに格納
 		String[] values = scanner.split("、", 0); //＜＜①
-
-		//テレビとディスプレイの条件分岐に使用する変数を作成
-		String display = "ディスプレイ"; //＜＜Ａ
-
+		
+		//テレビとディスプレイの時に使う
+		int result = 0;		//＜＜Ａ
+		
+		//テレビとディスプレイが出た数をカウント
+		int count = 0;
+		
 		for (String value : values) { //＜＜②　①に入った要素を順番に取り出す
 
 			System.out.println();
@@ -28,9 +31,8 @@ public class Qes6 {
 			int stock = random.nextInt(12);
 			
 			
-
 			switch (value) { //＜＜④　②で取り出した要素を仕分ける
-
+			
 			case "パソコン":
 
 			case "冷蔵庫":
@@ -48,11 +50,13 @@ public class Qes6 {
 			case "テレビ":
 
 			case "ディスプレイ":
+				
+				//どちらか一つならランダム、二つ出たらcountして合わせて11になるよう出力
+				result = count==0? stock: 11-result; 
 
-				String result = value.equals(display) ? display + "の残り台数は" + ( 11 - stock) + "です。"
-						: value + "の残り台数は" + (stock) + "です。"; //＜＜Ａで作成した文字列を元に比較し出力を分ける
+				System.out.println(value + "の残り台数は"+result + "です。");//＜＜Ａ
 
-				System.out.println(result);
+				count++;
 				break;
 				
 			default:
