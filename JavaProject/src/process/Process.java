@@ -1,8 +1,8 @@
 package process;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 public class Process {
 	
 	// フィールド変数
@@ -22,8 +22,8 @@ public class Process {
 	public Process() { 
 		
 		//現在日時取得
-		Date exDate = new Date();
-		SimpleDateFormat day = new SimpleDateFormat("yyyy-MM-dd H:m:s");
+		LocalDateTime exDate = LocalDateTime.now();
+		DateTimeFormatter day = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:SS");
 		this.time = day.format(exDate);
 	}
 	}
