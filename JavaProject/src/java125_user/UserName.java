@@ -6,13 +6,13 @@ public class UserName {
 	
 	public String getUserName() {
 		
-		return this.userName;	//メインに返す
+		return this.userName;	// メインに返す
 		
 	}
 	
 	public void setUserName(String name) {
 		
-		this.userName = name;	//scanの値を受け取る
+		this.userName = name;	// scanの値を受け取る
 		
 	}
 	
@@ -21,6 +21,7 @@ public class UserName {
 		System.out.print("\n名前を決めよう！⇒");
 			
 	}
+	
 	public void hello() {
 		
 		System.out.println("\n\nこんにちは 「 " +  userName + " 」 さん");
