@@ -1,6 +1,6 @@
 package java130;
 
-public class Person{
+public class Person {
 	// インスタンスフィールドを定義
 
 	public  String name;
@@ -9,7 +9,7 @@ public class Person{
 	public double weight;	
 	public int count;
 	// コンストラクタを定義しインスタンスフィールドに値をセット
-	Person(String name, int age, double height, double weight){
+	Person(String name, int age, double height, double weight) {
 		
 		this.name = name;
 		this.age = age;
@@ -30,7 +30,7 @@ public class Person{
 		
 		System.out.println("\n「名前は" + this.name + "です」,");
 		System.out.println("「年は" + this.age + "です」");
-		System.out.println("「BMIは" + Math.round(this.bmi()) + "です」");
+		System.out.println("「BMIは" + Math.floor(this.bmi()) + "です」");
 		
 		System.out.println("\n\n合計" + this.count+"人です");
 	}
